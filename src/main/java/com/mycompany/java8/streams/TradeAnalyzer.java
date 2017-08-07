@@ -5,7 +5,7 @@
  */
 package com.mycompany.java8.streams;
 
-import com.mycompany.java8.dto.TradeOrder;
+import com.mycompany.dto.TradeOrder;
 import java.util.List;
 import java.util.UUID;
 import static java.util.stream.Collectors.toList;

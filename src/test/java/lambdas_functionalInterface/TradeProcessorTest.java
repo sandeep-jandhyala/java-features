@@ -5,7 +5,7 @@
  */
 package lambdas_functionalInterface;
 
-import com.mycompany.java8.dto.TradeOrder;
+import com.mycompany.dto.TradeOrder;
 import com.mycompany.java8.lambdas_functionalinterface.TradeProcessor;
 import java.time.LocalDateTime;
 import java.time.Month;

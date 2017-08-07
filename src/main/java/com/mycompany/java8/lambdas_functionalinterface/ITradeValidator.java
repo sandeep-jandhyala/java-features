@@ -5,7 +5,7 @@
  */
 package com.mycompany.java8.lambdas_functionalinterface;
 
-import com.mycompany.java8.dto.TradeOrder;
+import com.mycompany.dto.TradeOrder;
 
 /**
  *

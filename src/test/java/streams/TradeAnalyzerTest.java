@@ -5,7 +5,7 @@
  */
 package streams;
 
-import com.mycompany.java8.dto.TradeOrder;
+import com.mycompany.dto.TradeOrder;
 import com.mycompany.java8.lambdas_functionalinterface.TradeProcessor;
 import com.mycompany.java8.streams.TradeAnalyzer;
 import java.time.LocalDateTime;

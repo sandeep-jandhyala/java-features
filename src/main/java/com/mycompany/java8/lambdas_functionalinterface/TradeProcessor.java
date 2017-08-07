@@ -5,7 +5,7 @@
  */
 package com.mycompany.java8.lambdas_functionalinterface;
 
-import com.mycompany.java8.dto.TradeOrder;
+import com.mycompany.dto.TradeOrder;
 import java.util.function.Consumer;
 import java.util.function.Function;
 import java.util.function.Predicate;
@@ -26,9 +26,8 @@ public class TradeProcessor {
     };
 
     // Java Built in Functional Interface
-    Predicate<TradeOrder> timeCheckLambda = t -> {
-        return t.getOrderTime().getHour() >= 16;
-    };
+    Predicate<TradeOrder> timeCheckLambda = t -> t.getOrderTime().getHour() >= 16;
+    
 
     Function<TradeOrder, Integer> processedTradeCounterLambda = t -> tradesProcessedCounter++;
 
