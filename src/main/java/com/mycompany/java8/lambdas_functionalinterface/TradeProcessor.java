@@ -21,15 +21,15 @@ public class TradeProcessor {
     public static int tradesSubmittedCounter;
 
     // Custom Functional Interface
-    ITradeValidator heavyTransactionLambda = t -> {
+    ITradeValidator heavyTransactionPredicate = t -> {
         return t.getStockUnitPrice() * t.getQuantity() > 100000;
     };
 
     // Java Built in Functional Interface
-    Predicate<TradeOrder> timeCheckLambda = t -> t.getOrderTime().getHour() >= 16;
+    Predicate<TradeOrder> timeCheckPredicate = t -> t.getOrderTime().getHour() >= 16;
     
 
-    Function<TradeOrder, Integer> processedTradeCounterLambda = t -> tradesProcessedCounter++;
+    Function<TradeOrder, Integer> processedTradeCounter = t -> tradesProcessedCounter++;
 
     
     public boolean processTradeOrder(TradeOrder order) {
@@ -41,14 +41,14 @@ public class TradeProcessor {
             tradesSubmittedCounter++;
         });
         
-        if (heavyTransactionLambda.validateTrade(order) || timeCheckLambda.test(order)) {            
+        if (heavyTransactionPredicate.validateTrade(order) || timeCheckPredicate.test(order)) {            
             // Huge Trades cannot be processed systemically, needs manual review
             return false;
 
         }
 
         //do the actual trade processing here 
-        processedTradeCounterLambda.apply(order);
+        processedTradeCounter.apply(order);
 
         return true;
     }

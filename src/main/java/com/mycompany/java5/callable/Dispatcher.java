@@ -23,6 +23,7 @@ import java.util.concurrent.TimeoutException;
  */
 public class Dispatcher {
     
+    
     public static void main(String args[]) throws InterruptedException, ExecutionException, TimeoutException{
         
         List<Letter> letterList = letterBuilder();
@@ -47,6 +48,7 @@ public class Dispatcher {
 
     private static List<Letter> letterBuilder() {
         
+       
         List<Letter> letterList = new ArrayList<Letter>();
     
          Letter l1 = new Letter("LTR001",new HashMap());
